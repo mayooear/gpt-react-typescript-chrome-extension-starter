@@ -1,10 +1,10 @@
-## Minimalist OpenAI Chrome Extension Boilerplate
+## Minimalist OpenAI Chrome Extension Starter Using React, Vite, TailwindCSS and OpenAI
 
-## Chrome extension guidelines
+## Installation
 
-- `manifest.json` file must be in the root of the project.
-- It is recommended to use PNG files for icons
-- `content.js` contains scripts that can read and modify the content of a page
+Replace `.env.example` with `.env` and insert your OpenAI key as the value for `VITE_Open_AI_Key`
+
+In the `src/utils` folder, you will find the reconfigured openai function to be imported and used within other modules.
 
 ## Loading unpacked extension
 
@@ -16,3 +16,19 @@ Or, click the Chrome menu, hover over More Tools, then select Extensions.
 2. Enable Developer Mode by clicking the toggle switch next to Developer mode.
 
 3. Click the Load unpacked button and select the extension directory.
+
+## CRXJS Vite Plugin
+
+This starter uses CRXJS Vite plugin.
+
+CRXJS Vite Plugin is a tool that helps you make Chrome Extensions using modern web development technology.
+
+Things like HMR and static asset imports work out of the box so you can get started making a modern Chrome Extension, not configuring build tools.
+
+CRXJS parses manifest.json to find the files to include in your extension. The manifest is the central document that declares most of the files and configuration for your extension, why do we need more?
+
+[Docs](https://crxjs.dev/vite-plugin/)
+
+## Chrome extension guidelines
+
+- If you update content script, refresh the extension in chrome 'manage extensions' page

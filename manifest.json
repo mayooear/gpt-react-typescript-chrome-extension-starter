@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "My Extension",
   "version": "1.0",
   "description": "My Extension",
@@ -9,23 +9,26 @@
     "48": "images/icon-48.png",
     "128": "images/icon-128.png"
   },
-  "browser_action": {
+  "action": {
     "default_icon": "icon.png",
     "default_title": "My Extension",
-    "default_popup": "popup.html"
+    "default_popup": "src/pages/popup/index.html"
   },
-  "permissions": ["tabs", "storage", "http://*/*", "https://*/*"],
+  "permissions": [],
   "background": {
-    "scripts": ["background.js"]
+    "service_worker": "src/pages/background/index.js"
   },
   "content_scripts": [
     {
-      "matches": [
-        "https://developer.chrome.com/docs/extensions/*",
-        "https://developer.chrome.com/docs/webstore/*"
-      ],
-      "js": ["scripts/content.js"]
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["src/pages/content/index.ts"]
     }
   ],
-  "web_accessible_resources": ["content.js"]
+  "web_accessible_resources": [
+    {
+      "resources": [],
+      "matches": []
+    }
+  ],
+  "options_page": "src/pages/options/index.html"
 }
